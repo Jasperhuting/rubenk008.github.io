@@ -1,31 +1,39 @@
 const state = {
     productCount: 0,
-    catCount: 0
+    catCount: 0,
+    catGrid: {
+        arrowLeft: false,
+        arrowRight: true
+    },
+    productGrid: {
+        arrowLeft: false,
+        arrowRight: true
+    }
 }
 
 const products = [
     {
-        priceOld: '99,95',
-        priceNew: '39,95',
-        productNr: 'PSW000402-9073',
-        productName: 'Sweat Hoodie',
-        productNameLink: 'sweat-hoodie-psw000402-9073',
+        priceOld: '199,95',
+        priceNew: '70,-',
+        productNr: 'PJA191112-5281',
+        productName: 'Semi long jacket',
+        productNameLink: 'semi-long-jacket-PJA191112-5281',
         brand: 'PME Legend',
         brandShort: 'pme'
     },
     {
         priceOld: '39,95',
-        priceNew: '19,95',
-        productNr: 'PTSS194532-7003',
-        productName: 'T-shirt',
-        productNameLink: 'short-sleeve-t-shirt-ptss194532-7003',
-        brand: 'PME Legend',
-        brandShort: 'pme'
+        priceNew: '20,-',
+        productNr: 'VTSS194696-5068',
+        productName: 'Short sleeve artwork T-shirt',
+        productNameLink: 'short-sleeve-artwork-t-shirt-VTSS194696-5068',
+        brand: 'Vanguard',
+        brandShort: 'vg'
     },
     {
         priceOld: '109,95',
-        priceNew: '39,95',
-        productNr: 'PTR170-EBS',
+        priceNew: '40,-',
+        productNr: 'PTR650-OBV',
         productName: 'Skyhawk Jeans',
         productNameLink: 'skyhawk-jeans-ptr170-ebs',
         brand: 'PME Legend',
@@ -34,58 +42,96 @@ const products = [
     {
         priceOld: '109,95',
         priceNew: '39,95',
-        productNr: 'PTR170-EBS',
-        productName: 'Skyhawk Jeans',
+        productNr: 'CKW192401-7003',
+        productName: 'Stripe crewneck pullover',
+        productNameLink: 'stripe-crewneck-pullover-CKW192401-7003',
+        brand: 'Cast Iron',
+        brandShort: 'ci'
+    },
+    {
+        priceOld: '109,95',
+        priceNew: '50,-',
+        productNr: 'PBO192023-900',
+        productName: 'Low sneaker',
         productNameLink: 'skyhawk-jeans-ptr170-ebs',
         brand: 'PME Legend',
         brandShort: 'pme'
     },
     {
-        priceOld: '109,95',
-        priceNew: '39,95',
-        productNr: 'PTR170-EBS',
-        productName: 'Skyhawk Jeans',
-        productNameLink: 'skyhawk-jeans-ptr170-ebs',
+        priceOld: '34,95',
+        priceNew: '15,-',
+        productNr: 'PUW00106-5550',
+        productName: 'Boxershorts',
+        productNameLink: 'boxershorts-PUW00106-5550',
         brand: 'PME Legend',
         brandShort: 'pme'
-    },
+    }
 ];
 
 const categories = [
     {
+        catName: 'jeans',
+        catImg: 'jeans',
+        catLink: '/jeans',
+        catKey: 1,
+    },
+    {
+        catName: 'shorts',
+        catImg: 'shorts',
+        catLink: '/broeken/shorts',
+        catKey: 2,
+    },
+    {
+        catName: 't-shirts',
+        catImg: 't-shirt',
+        catLink: '/tops/t-shirts',
+        catKey: 3,
+    },
+    {
         catName: 'jackets',
         catImg: 'jackets',
         catLink: '/jassen',
-        catKey: 1,
+        catKey: 4,
+    },
+    {
+        catName: 'shirts',
+        catImg: 'shirts',
+        catLink: '/tops/overhemden',
+        catKey: 5,
     },
     {
         catName: 'colberts',
         catImg: 'colberts',
         catLink: '/jassen/colberts',
-        catKey: 2,
+        catKey: 6,
     },
-    ,
-    {
-        catName: 'shirts',
-        catImg: 'shirts',
-        catLink: '/tops/overhemden',
-        catKey: 3,
-    },
-    ,
     {
         catName: 'polo\'s',
         catImg: 'polo',
         catLink: '/tops/polo-shirts',
-        catKey: 4,
+        catKey: 7,
     },
     {
-        catName: 'jeans',
-        catImg: 'jeans',
-        catLink: '/jeans',
-        catKey: 5,
-    }
+        catName: 'sweaters & knitwear',
+        catImg: 'knitwear',
+        catLink: '/tops/truien-vesten',
+        catKey: 9,
+    },
+    {
+        catName: 'schoenen',
+        catImg: 'schoenen',
+        catLink: '/schoenen',
+        catKey: 8,
+    },
+    {
+        catName: 'accessoires',
+        catImg: 'accessoires',
+        catLink: '/accessoires',
+        catKey: 10,
+    },
 ]
 
+// RENDER PRODUCT CARD
 function renderProductCard(priceOld, priceNew, productNr, productName, productNameLink, brand, brandShort) {
     const productCardTemplate = `
     <a href="/${productNameLink}" class="productCardLinkWrapper hovered">
@@ -132,6 +178,7 @@ function renderProductCards(productArray) {
     })
 };
 
+// RENDER CAT CARD
 function renderCatCard(catName, catLink, catImg) {
     const catCardTemplate = `
     <a href="${catLink}" class="catCardLinkWrapper">
@@ -177,7 +224,9 @@ function renderCatCards(catArray) {
 function getSetCssVars(){
     let htmlStyles = window.getComputedStyle(document.querySelector("html"));
     let colNumProductGrid = parseInt(htmlStyles.getPropertyValue("--colNumProductGrid"));
+    let colNumCAtGrid = parseInt(htmlStyles.getPropertyValue("--colNumCatGrid"));
     document.documentElement.style.setProperty("--colNumProductGrid", state.productCount);
+    document.documentElement.style.setProperty("--colNumCatGrid", state.catCount);
 }
 
 
@@ -200,17 +249,105 @@ function renderColContainer(colContainer, colNode, totalCol, colInView){
     setColWidth(colWidth, colNode);
 }
 
-function onResizeEvents(){
-    renderColContainer('productGrid', 'productCard', state.productCount, 3);
+// SCROLL ON CLICK ARROW 
+function scrollStep(el, direction, containerType) {
+    const containerWidth = document.getElementById(el).offsetWidth;
+    const scrollAmount = containerWidth;
+    const scrollContainer = document.getElementById(el);
+
+    if (direction === 'left') {
+        scrollContainer.scrollBy(scrollAmount, 0);
+        changeArrowState(containerType)
+    } else if (direction === 'right') {
+        scrollContainer.scrollBy(-scrollAmount, 0);
+        changeArrowState(containerType)
+    }
+};
+
+function changeArrowState(containerType){
+
+    if(containerType === 'catGrid'){
+
+        if(state.catGrid.arrowLeft){
+            state.catGrid.arrowLeft = false;
+            state.catGrid.arrowRight = true;
+        }
+        else {
+            state.catGrid.arrowLeft = true;
+            state.catGrid.arrowRight = false;
+        }
+        renderArrows('catGrid')
+    }
+
+    else if(containerType === 'productGrid'){
+
+        if(state.productGrid.arrowLeft){
+            state.productGrid.arrowLeft = false;
+            state.productGrid.arrowRight = true;
+        }
+        else {
+            state.productGrid.arrowLeft = true;
+            state.productGrid.arrowRight = false;
+        }
+        renderArrows('productGrid')
+    }
 }
 
+function renderArrows(containerType){
+
+    const catGridArrowLeft = document.getElementById('catGridBtnLeft');
+    const catGridArrowRight = document.getElementById('catGridBtnRight');
+    const productGridArrowLeft = document.getElementById('productGridBtnLeft');
+    const productGridArrowRight = document.getElementById('productGridBtnRight');
+
+    if(containerType === 'catGrid'){
+        if(state.catGrid.arrowLeft){
+
+            catGridArrowRight.classList.add('hidden');
+            catGridArrowLeft.classList.remove('hidden');
+    
+        } else {
+            catGridArrowLeft.classList.add('hidden');
+            catGridArrowRight.classList.remove('hidden');
+        }
+    } else if(containerType === 'productGrid'){
+
+        if (state.productGrid.arrowLeft){
+            productGridArrowRight.classList.add('hidden');
+            productGridArrowLeft.classList.remove('hidden');
+        } else {
+            productGridArrowLeft.classList.add('hidden');
+            productGridArrowRight.classList.remove('hidden');
+        }
+    }
+    
+}
+
+// ON RESIZE TRIGGER THESE EVENTS
+
+function onResizeEvents(){
+    renderColContainer('productGrid', 'productCard', state.productCount, 3);
+    renderColContainer('catGrid', 'catCard', state.productCount, 5);
+}
+
+// INIT SMOOTH SCROLL
+
+function initSmoothScroll(){
+    let scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 500
+    });
+}
+
+// INIT FUNCTIONS ON CONTENT LOAD
 function init(){
     renderProductCards(products);
     renderCatCards(categories);
     renderColContainer('productGrid', 'productCard', state.productCount, 3);
+    renderColContainer('catGrid', 'catCard', state.productCount, 5);
     getSetCssVars()
-    
     window.addEventListener("resize", onResizeEvents);
-
+    initSmoothScroll();
+    renderArrows('catGrid');
+    renderArrows('productGrid');
 }
 
