@@ -142,7 +142,7 @@ function renderProductCard(priceOld, priceNew, productNr, productName, productNa
                     only screen and (min--moz-device-pixel-ratio: 1.5),
                     only screen and (min-device-pixel-ratio: 1.5),
                     only screen and (min-resolution: 144dpi),
-                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https%3A%2F%2Fwww.justbrands.nl%2Ftime-1579610470%2Fmedia%2Fcatalog%2Fproduct%2Fupload%2F${productNr}~front.png&width=1600&height&type=webp">
+                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https%3A%2F%2Fwww.justbrands.nl%2Ftime-1579610470%2Fmedia%2Fcatalog%2Fproduct%2Fupload%2F${productNr}~front.png&width=1600&height&type">
                     <source media="only screen and (-webkit-min-device-pixel-ratio: 1.5),
                     only screen and (min--moz-device-pixel-ratio: 1.5),
                     only screen and (min-device-pixel-ratio: 1.5),
@@ -189,7 +189,7 @@ function renderCatCard(catName, catLink, catImg) {
                     only screen and (min--moz-device-pixel-ratio: 1.5),
                     only screen and (min-device-pixel-ratio: 1.5),
                     only screen and (min-resolution: 144dpi),
-                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}.jpg&width=1600&height&type=webp">
+                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}.jpg&width=1600&height&type">
                     <source media="only screen and (-webkit-min-device-pixel-ratio: 1.5),
                     only screen and (min--moz-device-pixel-ratio: 1.5),
                     only screen and (min-device-pixel-ratio: 1.5),
