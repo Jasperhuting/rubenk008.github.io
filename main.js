@@ -14,55 +14,55 @@ const state = {
 const products = [
     {
         priceOld: '199,95',
-        priceNew: '70,-',
-        productNr: 'PJA191112-5281',
-        productName: 'Semi long jacket',
-        productNameLink: 'semi-long-jacket-PJA191112-5281',
+        priceNew: '95,-',
+        productNr: 'PJA195125-5281',
+        productName: 'Liftmaster',
+        productNameLink: 'liftmaster-pja195125-5281',
         brand: 'PME Legend',
         brandShort: 'pme'
     },
     {
-        priceOld: '39,95',
-        priceNew: '20,-',
-        productNr: 'VTSS194696-5068',
-        productName: 'Short sleeve artwork T-shirt',
-        productNameLink: 'short-sleeve-artwork-t-shirt-VTSS194696-5068',
-        brand: 'Vanguard',
-        brandShort: 'vg'
+        priceOld: '119,95',
+        priceNew: '50,-',
+        productNr: 'PKW186301-7013',
+        productName: 'HALF BUTTON KNIT',
+        productNameLink: 'pkw186301-7013',
+        brand: 'PME Legend',
+        brandShort: 'pme'
     },
     {
         priceOld: '109,95',
         priceNew: '40,-',
-        productNr: 'PTR650-OBV',
-        productName: 'Skyhawk Jeans',
-        productNameLink: 'skyhawk-jeans-ptr170-ebs',
+        productNr: 'PTR650-TIB',
+        productName: 'Skymaster jeans',
+        productNameLink: 'skymaster-jeans-ptr650-tib',
         brand: 'PME Legend',
         brandShort: 'pme'
     },
     {
-        priceOld: '109,95',
-        priceNew: '39,95',
-        productNr: 'CKW192401-7003',
-        productName: 'Stripe crewneck pullover',
-        productNameLink: 'stripe-crewneck-pullover-CKW192401-7003',
-        brand: 'Cast Iron',
-        brandShort: 'ci'
+        priceOld: '69,95',
+        priceNew: '30,-',
+        productNr: 'PTS198516-9077',
+        productName: 'Long sleeve t-shirt',
+        productNameLink: 'long-sleeve-t-shirt-pts198516-90773',
+        brand: 'PME Legend',
+        brandShort: 'pme'
     },
     {
-        priceOld: '109,95',
-        priceNew: '50,-',
-        productNr: 'PBO192023-900',
-        productName: 'Low sneaker',
-        productNameLink: 'skyhawk-jeans-ptr170-ebs',
+        priceOld: '149,95',
+        priceNew: '65,-',
+        productNr: 'PBO196033-961',
+        productName: 'Boots',
+        productNameLink: 'boots-pbo196033-961',
         brand: 'PME Legend',
         brandShort: 'pme'
     },
     {
         priceOld: '34,95',
         priceNew: '15,-',
-        productNr: 'PUW00106-5550',
+        productNr: 'PUW195100-960',
         productName: 'Boxershorts',
-        productNameLink: 'boxershorts-PUW00106-5550',
+        productNameLink: 'boxershorts-puw195100-960',
         brand: 'PME Legend',
         brandShort: 'pme'
     }
@@ -142,7 +142,7 @@ function renderProductCard(priceOld, priceNew, productNr, productName, productNa
                     only screen and (min--moz-device-pixel-ratio: 1.5),
                     only screen and (min-device-pixel-ratio: 1.5),
                     only screen and (min-resolution: 144dpi),
-                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https%3A%2F%2Fwww.justbrands.nl%2Ftime-1579610470%2Fmedia%2Fcatalog%2Fproduct%2Fupload%2F${productNr}~front.png&width=1600&height&type">
+                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https%3A%2F%2Fwww.justbrands.nl%2Ftime-1579610470%2Fmedia%2Fcatalog%2Fproduct%2Fupload%2F${productNr}~front.png&width=1600&height&type=webp">
                     <source media="only screen and (-webkit-min-device-pixel-ratio: 1.5),
                     only screen and (min--moz-device-pixel-ratio: 1.5),
                     only screen and (min-device-pixel-ratio: 1.5),
@@ -189,7 +189,7 @@ function renderCatCard(catName, catLink, catImg) {
                     only screen and (min--moz-device-pixel-ratio: 1.5),
                     only screen and (min-device-pixel-ratio: 1.5),
                     only screen and (min-resolution: 144dpi),
-                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}.jpg&width=1600&height&type">
+                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}.jpg&width=1600&height&type=webp">
                     <source media="only screen and (-webkit-min-device-pixel-ratio: 1.5),
                     only screen and (min--moz-device-pixel-ratio: 1.5),
                     only screen and (min-device-pixel-ratio: 1.5),
