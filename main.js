@@ -76,9 +76,9 @@ const categories = [
         catKey: 1,
     },
     {
-        catName: 'shorts',
-        catImg: 'shorts',
-        catLink: '/broeken/shorts',
+        catName: 'broeken',
+        catImg: 'broeken',
+        catLink: '/broeken',
         catKey: 2,
     },
     {
