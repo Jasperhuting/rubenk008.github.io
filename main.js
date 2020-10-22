@@ -189,12 +189,12 @@ function renderCatCard(catName, catLink, catImg) {
                     only screen and (min--moz-device-pixel-ratio: 1.5),
                     only screen and (min-device-pixel-ratio: 1.5),
                     only screen and (min-resolution: 144dpi),
-                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}.jpg&width=1600&height&type=webp">
+                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}-winter.jpg&width=1600&height&type=webp">
                     <source media="only screen and (-webkit-min-device-pixel-ratio: 1.5),
                     only screen and (min--moz-device-pixel-ratio: 1.5),
                     only screen and (min-device-pixel-ratio: 1.5),
                     only screen and (min-resolution: 144dpi),
-                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}.jpg&width=820&height&type">
+                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}-winter.jpg&width=820&height&type">
                     <img src="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/mobile/${catImg}.jpg&width=410&height&type" alt="">
                 </picture>  
             </div>
