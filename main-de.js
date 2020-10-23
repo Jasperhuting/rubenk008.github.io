@@ -195,7 +195,7 @@ function renderCatCard(catName, catLink, catImg) {
                     only screen and (min-device-pixel-ratio: 1.5),
                     only screen and (min-resolution: 144dpi),
                     only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}-winter.jpg&width=820&height&type">
-                    <img src="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/mobile/${catImg}.jpg&width=410&height&type" alt="">
+                    <img src="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/mobile/${catImg}-winter.jpg&width=410&height&type" alt="">
                 </picture>  
             </div>
             <div class="catCard__bottom">
