@@ -108,7 +108,7 @@ const categories = [
     {
         catName: 'polo\'s',
         catImg: 'polo',
-        catLink: '/tops/polo-shirts',
+        catLink: '/tops/polos',
         catKey: 7,
     },
     {
@@ -348,12 +348,3 @@ function init(){
     renderArrows('catGrid');
     renderArrows('productGrid');
 }
-
-if(document.readyState === "complete" || document.readyState === "loaded"){
-    init();
-}else{
-    window.addEventListener('DOMContentLoaded', function(event){
-        init();
-    });
-};
-
