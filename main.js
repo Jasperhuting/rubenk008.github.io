@@ -324,14 +324,12 @@ function renderArrows(containerType){
 }
 
 // ON RESIZE TRIGGER THESE EVENTS
-
 function onResizeEvents(){
     renderColContainer('productGrid', 'productCard', state.productCount, 3);
     renderColContainer('catGrid', 'catCard', state.productCount, 5);
 }
 
 // INIT SMOOTH SCROLL
-
 function initSmoothScroll(){
     let scroll = new SmoothScroll('a[href*="#"]', {
         speed: 500
@@ -350,4 +348,12 @@ function init(){
     renderArrows('catGrid');
     renderArrows('productGrid');
 }
+
+if(document.readyState === "complete" || document.readyState === "loaded"){
+    init();
+}else{
+    window.addEventListener('DOMContentLoaded', function(event){
+        init();
+    });
+};
 
