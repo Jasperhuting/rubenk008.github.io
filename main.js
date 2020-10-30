@@ -348,3 +348,7 @@ function init(){
     renderArrows('catGrid');
     renderArrows('productGrid');
 }
+
+if(document.readyState === 'complete') {
+    console.log('document loaded')
+}
