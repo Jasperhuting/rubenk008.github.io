@@ -351,4 +351,5 @@ function init(){
 
 if(document.readyState === 'complete') {
     console.log('document loaded')
+    init();
 }
