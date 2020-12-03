@@ -115,9 +115,9 @@ var renderBalance = function renderBalance(response) {
   } // WHEN STATUS IS INACTIVE OR EXPERID RENDER COLUMN
 
 
-  if (response.card.Status[0] === 'Inactive' || response.card.Status[0] === 'Expired') {
+  if (response.card.Status[0] === 'Inactive' || response.card.Status[0] === 'Expired' || response.card.Status[0] === 'Blocked') {
     var status = response.card.Status[0];
-    var statusColumn = "<div class=\"messageColumn\">\n                                        <div class=\"label\">Kaartstatus</div>\n                                        <div class=\"value\">".concat(status === 'Inactive' ? 'Inactief' : 'Verlopen', "</div>\n                                    </div>");
+    var statusColumn = "<div class=\"messageColumn\">\n                                        <div class=\"label\">Kaartstatus</div>\n                                        <div class=\"value\">".concat(status === 'Inactive' ? 'Inactief' : 'Niet te gebruiken', "</div>\n                                    </div>");
     balanceMessage += statusColumn;
   }
 
