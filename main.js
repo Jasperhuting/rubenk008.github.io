@@ -70,19 +70,19 @@ const state = {
 const categories = [{
         catName: 'Winter jassen',
         catImg: 'winter',
-        catLink: '/jeans',
+        catLink: '/jassen/winterjassen',
         catKey: 1,
     },
     {
         catName: 'Zomer jassen',
         catImg: 'zomer',
-        catLink: '/broeken',
+        catLink: '/jassen/zomerjassen',
         catKey: 2,
     },
     {
         catName: 'Leren jassen',
         catImg: 'leer',
-        catLink: '/tops/t-shirts',
+        catLink: '/jassen/leren-jassen',
         catKey: 3,
     },
     // {
