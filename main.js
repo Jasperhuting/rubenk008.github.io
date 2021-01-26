@@ -339,7 +339,7 @@ function init() {
     getSetCssVars()
     window.addEventListener("resize", onResizeEvents);
     initSmoothScroll();
-    renderArrows('catGrid');
+//     renderArrows('catGrid');
     // renderArrows('productGrid');
 }
 
