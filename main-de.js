@@ -11,8 +11,7 @@ const state = {
     }
 }
 
-const products = [
-    {
+const products = [{
         priceOld: '199,95',
         priceNew: '95,-',
         productNr: 'PJA195125-5281',
@@ -68,67 +67,66 @@ const products = [
     }
 ];
 
-const categories = [
-    {
-        catName: 'jeans',
-        catImg: 'jeans',
-        catLink: '/jeans',
+const categories = [{
+        catName: 'Winter jacken',
+        catImg: 'winter',
+        catLink: '/jacken/winterjacken',
         catKey: 1,
     },
     {
-        catName: 'hosen',
-        catImg: 'broeken',
-        catLink: '/hosen',
+        catName: 'Sommer jacken',
+        catImg: 'zomer',
+        catLink: '/jacken/sommerjacken',
         catKey: 2,
     },
     {
-        catName: 't-shirts',
-        catImg: 't-shirt',
-        catLink: '/tops/t-shirts',
+        catName: 'Leder jacken',
+        catImg: 'leer',
+        catLink: '/jacken/lederjacken',
         catKey: 3,
     },
-    {
-        catName: 'jacken',
-        catImg: 'jackets',
-        catLink: '/jacken',
-        catKey: 4,
-    },
-    {
-        catName: 'hemden',
-        catImg: 'shirts',
-        catLink: '/tops/hemden',
-        catKey: 5,
-    },
-    {
-        catName: 'sakkos',
-        catImg: 'colberts',
-        catLink: '/jacken/sakkos',
-        catKey: 6,
-    },
-    {
-        catName: 'polo\'s',
-        catImg: 'polo',
-        catLink: '/tops/poloshirts',
-        catKey: 7,
-    },
-    {
-        catName: 'Pullover & Strickjacken',
-        catImg: 'knitwear',
-        catLink: '/tops/pullover-strickjacken',
-        catKey: 9,
-    },
-    {
-        catName: 'Schuehe',
-        catImg: 'schoenen',
-        catLink: '/schuehe',
-        catKey: 8,
-    },
-    {
-        catName: 'gear',
-        catImg: 'accessoires',
-        catLink: '/gear',
-        catKey: 10,
-    },
+    // {
+    //     catName: 'jackets',
+    //     catImg: 'jackets',
+    //     catLink: '/jassen',
+    //     catKey: 4,
+    // },
+    // {
+    //     catName: 'shirts',
+    //     catImg: 'shirts',
+    //     catLink: '/tops/overhemden',
+    //     catKey: 5,
+    // },
+    // {
+    //     catName: 'colberts',
+    //     catImg: 'colberts',
+    //     catLink: '/jassen/colberts',
+    //     catKey: 6,
+    // },
+    // {
+    //     catName: 'polo\'s',
+    //     catImg: 'polo',
+    //     catLink: '/tops/polos',
+    //     catKey: 7,
+    // },
+    // {
+    //     catName: 'sweaters & knitwear',
+    //     catImg: 'knitwear',
+    //     catLink: '/tops/truien-vesten',
+    //     catKey: 9,
+    // },
+    // {
+    //     catName: 'schoenen',
+    //     catImg: 'schoenen',
+    //     catLink: '/schoenen',
+    //     catKey: 8,
+    // },
+    // {
+    //     catName: 'accessoires',
+    //     catImg: 'accessoires',
+    //     catLink: '/accessoires',
+    //     catKey: 10,
+    // },
 ]
 
 // RENDER PRODUCT CARD
@@ -189,13 +187,13 @@ function renderCatCard(catName, catLink, catImg) {
                     only screen and (min--moz-device-pixel-ratio: 1.5),
                     only screen and (min-device-pixel-ratio: 1.5),
                     only screen and (min-resolution: 144dpi),
-                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}-winter.jpg&width=1600&height&type=webp">
+                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}.jpg&width=1600&height&type=webp">
                     <source media="only screen and (-webkit-min-device-pixel-ratio: 1.5),
                     only screen and (min--moz-device-pixel-ratio: 1.5),
                     only screen and (min-device-pixel-ratio: 1.5),
                     only screen and (min-resolution: 144dpi),
-                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}-winter.jpg&width=820&height&type">
-                    <img src="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/mobile/${catImg}-winter.jpg&width=410&height&type" alt="">
+                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}.jpg&width=820&height&type">
+                    <img src="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/mobile/${catImg}.jpg&width=410&height&type" alt="">
                 </picture>  
             </div>
             <div class="catCard__bottom">
@@ -221,7 +219,7 @@ function renderCatCards(catArray) {
 };
 
 // RENDER CARD SIZE + CARD CONTAINER SIZE
-function getSetCssVars(){
+function getSetCssVars() {
     let htmlStyles = window.getComputedStyle(document.querySelector("html"));
     let colNumProductGrid = parseInt(htmlStyles.getPropertyValue("--colNumProductGrid"));
     let colNumCAtGrid = parseInt(htmlStyles.getPropertyValue("--colNumCatGrid"));
@@ -230,7 +228,7 @@ function getSetCssVars(){
 }
 
 
-function calcColWidth(colContainerParent, colInView){
+function calcColWidth(colContainerParent, colInView) {
     const colContainerParentWidth = document.getElementById(colContainerParent).offsetWidth;
     const colWidth = colContainerParentWidth / colInView;
     return colWidth - 12;
@@ -238,12 +236,12 @@ function calcColWidth(colContainerParent, colInView){
 
 function setColWidth(colWidth, colNodeName) {
     const cols = document.getElementsByClassName(colNodeName);
-    for (let i = 0; i < cols.length; i++){
+    for (let i = 0; i < cols.length; i++) {
         cols[i].style.width = colWidth + 'px';
     }
 }
 
-function renderColContainer(colContainer, colNode, totalCol, colInView){
+function renderColContainer(colContainer, colNode, totalCol, colInView) {
     const colContainerParent = document.getElementById(colContainer).parentNode.id;
     const colWidth = calcColWidth(colContainerParent, colInView);
     setColWidth(colWidth, colNode);
@@ -264,28 +262,24 @@ function scrollStep(el, direction, containerType) {
     }
 };
 
-function changeArrowState(containerType){
+function changeArrowState(containerType) {
 
-    if(containerType === 'catGrid'){
+    if (containerType === 'catGrid') {
 
-        if(state.catGrid.arrowLeft){
+        if (state.catGrid.arrowLeft) {
             state.catGrid.arrowLeft = false;
             state.catGrid.arrowRight = true;
-        }
-        else {
+        } else {
             state.catGrid.arrowLeft = true;
             state.catGrid.arrowRight = false;
         }
         renderArrows('catGrid')
-    }
+    } else if (containerType === 'productGrid') {
 
-    else if(containerType === 'productGrid'){
-
-        if(state.productGrid.arrowLeft){
+        if (state.productGrid.arrowLeft) {
             state.productGrid.arrowLeft = false;
             state.productGrid.arrowRight = true;
-        }
-        else {
+        } else {
             state.productGrid.arrowLeft = true;
             state.productGrid.arrowRight = false;
         }
@@ -293,26 +287,26 @@ function changeArrowState(containerType){
     }
 }
 
-function renderArrows(containerType){
+function renderArrows(containerType) {
 
     const catGridArrowLeft = document.getElementById('catGridBtnLeft');
     const catGridArrowRight = document.getElementById('catGridBtnRight');
     const productGridArrowLeft = document.getElementById('productGridBtnLeft');
     const productGridArrowRight = document.getElementById('productGridBtnRight');
 
-    if(containerType === 'catGrid'){
-        if(state.catGrid.arrowLeft){
+    if (containerType === 'catGrid') {
+        if (state.catGrid.arrowLeft) {
 
             catGridArrowRight.classList.add('hidden');
             catGridArrowLeft.classList.remove('hidden');
-    
+
         } else {
             catGridArrowLeft.classList.add('hidden');
             catGridArrowRight.classList.remove('hidden');
         }
-    } else if(containerType === 'productGrid'){
+    } else if (containerType === 'productGrid') {
 
-        if (state.productGrid.arrowLeft){
+        if (state.productGrid.arrowLeft) {
             productGridArrowRight.classList.add('hidden');
             productGridArrowLeft.classList.remove('hidden');
         } else {
@@ -320,39 +314,38 @@ function renderArrows(containerType){
             productGridArrowRight.classList.remove('hidden');
         }
     }
-    
+
 }
 
 // ON RESIZE TRIGGER THESE EVENTS
 
-function onResizeEvents(){
-    renderColContainer('productGrid', 'productCard', state.productCount, 3);
+function onResizeEvents() {
+    // renderColContainer('productGrid', 'productCard', state.productCount, 3);
     renderColContainer('catGrid', 'catCard', state.productCount, 5);
 }
 
 // INIT SMOOTH SCROLL
 
-function initSmoothScroll(){
+function initSmoothScroll() {
     let scroll = new SmoothScroll('a[href*="#"]', {
         speed: 500
     });
 }
 
 // INIT FUNCTIONS ON CONTENT LOAD
-function init(){
-    renderProductCards(products);
+function init() {
+    // renderProductCards(products);
     renderCatCards(categories);
-    renderColContainer('productGrid', 'productCard', state.productCount, 3);
+    // renderColContainer('productGrid', 'productCard', state.productCount, 3);
     renderColContainer('catGrid', 'catCard', state.productCount, 5);
     getSetCssVars()
     window.addEventListener("resize", onResizeEvents);
     initSmoothScroll();
     renderArrows('catGrid');
-    renderArrows('productGrid');
+    // renderArrows('productGrid');
 }
 
-if(document.readyState === 'complete') {
+if (document.readyState === 'complete') {
     console.log('document loaded')
     init();
 }
-
