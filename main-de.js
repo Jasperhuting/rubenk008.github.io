@@ -70,19 +70,19 @@ const products = [{
 const categories = [{
         catName: 'Winter jacken',
         catImg: 'winter',
-        catLink: '/jacken/winterjacken',
+        catLink: '/de/jacken/winterjacken',
         catKey: 1,
     },
     {
         catName: 'Sommer jacken',
         catImg: 'zomer',
-        catLink: '/jacken/sommerjacken',
+        catLink: '/de/jacken/sommerjacken',
         catKey: 2,
     },
     {
         catName: 'Leder jacken',
         catImg: 'leer',
-        catLink: '/jacken/lederjacken',
+        catLink: '/de/jacken/lederjacken',
         catKey: 3,
     },
     // {
