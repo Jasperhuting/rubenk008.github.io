@@ -367,7 +367,7 @@ function renderArrows(containerType) {
 
 // ON RESIZE TRIGGER THESE EVENTS
 function onResizeEvents() {
-  // renderColContainer('productGrid', 'productCard', state.productCount, 3);
+  renderColContainer("productGrid", "productCard", state.productCount, 3);
   renderColContainer("catGrid", "catCard", state.productCount, 5);
 }
 
@@ -380,9 +380,9 @@ function initSmoothScroll() {
 
 // INIT FUNCTIONS ON CONTENT LOAD
 function init() {
-  // renderProductCards(products);
+  renderProductCards(products);
   renderCatCards(categories);
-  // renderColContainer('productGrid', 'productCard', state.productCount, 3);
+  renderColContainer("productGrid", "productCard", state.productCount, 3);
   renderColContainer("catGrid", "catCard", state.productCount, 5);
   getSetCssVars();
   window.addEventListener("resize", onResizeEvents);
