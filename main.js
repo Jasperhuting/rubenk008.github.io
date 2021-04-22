@@ -1,15 +1,72 @@
 const state = {
-    productCount: 0,
-    catCount: 0,
-    catGrid: {
-        arrowLeft: false,
-        arrowRight: true
-    },
-    productGrid: {
-        arrowLeft: false,
-        arrowRight: true
-    }
-}
+  productCount: 0,
+  catCount: 0,
+  catGrid: {
+    arrowLeft: false,
+    arrowRight: true,
+  },
+  productGrid: {
+    arrowLeft: false,
+    arrowRight: true,
+  },
+};
+
+const products = [
+  {
+    priceOld: "119,95",
+    priceNew: "40,-",
+    productNr: "PTR550-FGC",
+    productName: "Curtis jeans",
+    productNameLink: "curtis-jeans-ptr550-fgc",
+    brand: "PME Legend",
+    brandShort: "pme",
+  },
+  {
+    priceOld: "49,95",
+    priceNew: "20,-",
+    productNr: "PTSS201553-959",
+    productName: "R-neck Single Jersey Cold dye",
+    productNameLink: "r-neck-single-jersey-cold-dye-ptss201553-959",
+    brand: "PME Legend",
+    brandShort: "pme",
+  },
+  {
+    priceOld: "109,95",
+    priceNew: "40,-",
+    productNr: "PTR550-GCL",
+    productName: "CURTIS JEANS",
+    productNameLink: "curtis-jeans-ptr550-gcl",
+    brand: "PME Legend",
+    brandShort: "pme",
+  },
+  {
+    priceOld: "59,95",
+    priceNew: "30,-",
+    productNr: "PPSS202864-5287",
+    productName: "Light pique short sleeve polo",
+    productNameLink: "light-pique-short-sleeve-polo-ppss202864-5287",
+    brand: "PME Legend",
+    brandShort: "pme",
+  },
+  {
+    priceOld: "99,95",
+    priceNew: "35,-",
+    productNr: "PSH202761-BGS",
+    productName: "Commander Shorts",
+    productNameLink: "commander-shorts-psh202761-bgs",
+    brand: "PME Legend",
+    brandShort: "pme",
+  },
+  {
+    priceOld: "79,95",
+    priceNew: "40,-",
+    productNr: "PKW201300-6149",
+    productName: "Crewneck Cotton Pullover",
+    productNameLink: "crewneck-cotton-pullover-pkw201300-6149",
+    brand: "PME Legend",
+    brandShort: "pme",
+  },
+];
 
 // const products = [{
 //         priceOld: '199,95',
@@ -67,71 +124,56 @@ const state = {
 //     }
 // ];
 
-const categories = [{
-        catName: 'Winter jassen',
-        catImg: 'winter',
-        catLink: '/jassen/winterjassen',
-        catKey: 1,
-    },
-    {
-        catName: 'Zomer jassen',
-        catImg: 'zomer',
-        catLink: '/jassen/zomerjassen',
-        catKey: 2,
-    },
-    {
-        catName: 'Leren jassen',
-        catImg: 'leer',
-        catLink: '/jassen/leren-jassen',
-        catKey: 3,
-    },
-    // {
-    //     catName: 'jackets',
-    //     catImg: 'jackets',
-    //     catLink: '/jassen',
-    //     catKey: 4,
-    // },
-    // {
-    //     catName: 'shirts',
-    //     catImg: 'shirts',
-    //     catLink: '/tops/overhemden',
-    //     catKey: 5,
-    // },
-    // {
-    //     catName: 'colberts',
-    //     catImg: 'colberts',
-    //     catLink: '/jassen/colberts',
-    //     catKey: 6,
-    // },
-    // {
-    //     catName: 'polo\'s',
-    //     catImg: 'polo',
-    //     catLink: '/tops/polos',
-    //     catKey: 7,
-    // },
-    // {
-    //     catName: 'sweaters & knitwear',
-    //     catImg: 'knitwear',
-    //     catLink: '/tops/truien-vesten',
-    //     catKey: 9,
-    // },
-    // {
-    //     catName: 'schoenen',
-    //     catImg: 'schoenen',
-    //     catLink: '/schoenen',
-    //     catKey: 8,
-    // },
-    // {
-    //     catName: 'accessoires',
-    //     catImg: 'accessoires',
-    //     catLink: '/accessoires',
-    //     catKey: 10,
-    // },
-]
+const categories = [
+  {
+    catName: "jeans",
+    catImg: "jeans",
+    catLink: "/jeans",
+    catKey: 1,
+  },
+  {
+    catName: "Tops",
+    catImg: "tops", // aanmaken
+    catLink: "/tops",
+    catKey: 2,
+  },
+  {
+    catName: "broeken",
+    catImg: "broeken",
+    catLink: "/broeken",
+    catKey: 3,
+  },
+  {
+    catName: "jackets",
+    catImg: "jackets",
+    catLink: "/jassen",
+    catKey: 4,
+  },
+  {
+    catName: "schoenen",
+    catImg: "schoenen",
+    catLink: "/schoenen",
+    catKey: 5,
+  },
+  {
+    catName: "accessoires",
+    catImg: "accessoires",
+    catLink: "/accessoires",
+    catKey: 6,
+  },
+];
 
 // RENDER PRODUCT CARD
-function renderProductCard(priceOld, priceNew, productNr, productName, productNameLink, brand, brandShort) {
-    const productCardTemplate = `
+function renderProductCard(
+  priceOld,
+  priceNew,
+  productNr,
+  productName,
+  productNameLink,
+  brand,
+  brandShort
+) {
+  const productCardTemplate = `
     <a href="/${productNameLink}" class="productCardLinkWrapper hovered">
         <div class="productCard">
             <div class="productCard__top">
@@ -161,24 +203,32 @@ function renderProductCard(priceOld, priceNew, productNr, productName, productNa
             </div>
         </div>
     </a>
-    `
-    return productCardTemplate;
-};
+    `;
+  return productCardTemplate;
+}
 
 function renderProductCards(productArray) {
-    const productGrid = document.getElementById('productGrid');
+  const productGrid = document.getElementById("productGrid");
 
-    productArray.forEach((el) => {
-        const productCard = renderProductCard(el.priceOld, el.priceNew, el.productNr, el.productName, el.productNameLink, el.brand, el.brandShort);
-        productGrid.innerHTML += productCard;
+  productArray.forEach((el) => {
+    const productCard = renderProductCard(
+      el.priceOld,
+      el.priceNew,
+      el.productNr,
+      el.productName,
+      el.productNameLink,
+      el.brand,
+      el.brandShort
+    );
+    productGrid.innerHTML += productCard;
 
-        state.productCount += 1;
-    })
-};
+    state.productCount += 1;
+  });
+}
 
 // RENDER CAT CARD
 function renderCatCard(catName, catLink, catImg) {
-    const catCardTemplate = `
+  const catCardTemplate = `
     <a href="${catLink}" class="catCardLinkWrapper">
         <div class="catCard">
             <div class="catCard__top catCard__top--model">
@@ -203,147 +253,145 @@ function renderCatCard(catName, catLink, catImg) {
             </div>
         </div>
     </a>
-    `
-    return catCardTemplate;
+    `;
+  return catCardTemplate;
 }
 
 function renderCatCards(catArray) {
-    const catGrid = document.getElementById('catGrid');
+  const catGrid = document.getElementById("catGrid");
 
-    catArray.forEach((el) => {
-        const catCard = renderCatCard(el.catName, el.catLink, el.catImg);
-        catGrid.innerHTML += catCard;
+  catArray.forEach((el) => {
+    const catCard = renderCatCard(el.catName, el.catLink, el.catImg);
+    catGrid.innerHTML += catCard;
 
-        state.catCount += 1;
-    })
-};
+    state.catCount += 1;
+  });
+}
 
 // RENDER CARD SIZE + CARD CONTAINER SIZE
 function getSetCssVars() {
-    let htmlStyles = window.getComputedStyle(document.querySelector("html"));
-    let colNumProductGrid = parseInt(htmlStyles.getPropertyValue("--colNumProductGrid"));
-    let colNumCAtGrid = parseInt(htmlStyles.getPropertyValue("--colNumCatGrid"));
-    document.documentElement.style.setProperty("--colNumProductGrid", state.productCount);
-    document.documentElement.style.setProperty("--colNumCatGrid", state.catCount);
+  let htmlStyles = window.getComputedStyle(document.querySelector("html"));
+  let colNumProductGrid = parseInt(
+    htmlStyles.getPropertyValue("--colNumProductGrid")
+  );
+  let colNumCAtGrid = parseInt(htmlStyles.getPropertyValue("--colNumCatGrid"));
+  document.documentElement.style.setProperty(
+    "--colNumProductGrid",
+    state.productCount
+  );
+  document.documentElement.style.setProperty("--colNumCatGrid", state.catCount);
 }
 
-
 function calcColWidth(colContainerParent, colInView) {
-    const colContainerParentWidth = document.getElementById(colContainerParent).offsetWidth;
-    const colWidth = colContainerParentWidth / colInView;
-    return colWidth - 12;
+  const colContainerParentWidth = document.getElementById(colContainerParent)
+    .offsetWidth;
+  const colWidth = colContainerParentWidth / colInView;
+  return colWidth - 12;
 }
 
 function setColWidth(colWidth, colNodeName) {
-    const cols = document.getElementsByClassName(colNodeName);
-    for (let i = 0; i < cols.length; i++) {
-        cols[i].style.width = colWidth + 'px';
-    }
+  const cols = document.getElementsByClassName(colNodeName);
+  for (let i = 0; i < cols.length; i++) {
+    cols[i].style.width = colWidth + "px";
+  }
 }
 
 function renderColContainer(colContainer, colNode, totalCol, colInView) {
-    const colContainerParent = document.getElementById(colContainer).parentNode.id;
-    const colWidth = calcColWidth(colContainerParent, colInView);
-    setColWidth(colWidth, colNode);
+  const colContainerParent = document.getElementById(colContainer).parentNode
+    .id;
+  const colWidth = calcColWidth(colContainerParent, colInView);
+  setColWidth(colWidth, colNode);
 }
 
-// SCROLL ON CLICK ARROW 
+// SCROLL ON CLICK ARROW
 function scrollStep(el, direction, containerType) {
-    const containerWidth = document.getElementById(el).offsetWidth;
-    const scrollAmount = containerWidth;
-    const scrollContainer = document.getElementById(el);
+  const containerWidth = document.getElementById(el).offsetWidth;
+  const scrollAmount = containerWidth;
+  const scrollContainer = document.getElementById(el);
 
-    if (direction === 'left') {
-        scrollContainer.scrollBy(scrollAmount, 0);
-        changeArrowState(containerType)
-    } else if (direction === 'right') {
-        scrollContainer.scrollBy(-scrollAmount, 0);
-        changeArrowState(containerType)
-    }
-};
+  if (direction === "left") {
+    scrollContainer.scrollBy(scrollAmount, 0);
+    changeArrowState(containerType);
+  } else if (direction === "right") {
+    scrollContainer.scrollBy(-scrollAmount, 0);
+    changeArrowState(containerType);
+  }
+}
 
 function changeArrowState(containerType) {
-
-    if (containerType === 'catGrid') {
-
-        if (state.catGrid.arrowLeft) {
-            state.catGrid.arrowLeft = false;
-            state.catGrid.arrowRight = true;
-        } else {
-            state.catGrid.arrowLeft = true;
-            state.catGrid.arrowRight = false;
-        }
-        renderArrows('catGrid')
-    } else if (containerType === 'productGrid') {
-
-        if (state.productGrid.arrowLeft) {
-            state.productGrid.arrowLeft = false;
-            state.productGrid.arrowRight = true;
-        } else {
-            state.productGrid.arrowLeft = true;
-            state.productGrid.arrowRight = false;
-        }
-        renderArrows('productGrid')
+  if (containerType === "catGrid") {
+    if (state.catGrid.arrowLeft) {
+      state.catGrid.arrowLeft = false;
+      state.catGrid.arrowRight = true;
+    } else {
+      state.catGrid.arrowLeft = true;
+      state.catGrid.arrowRight = false;
     }
+    renderArrows("catGrid");
+  } else if (containerType === "productGrid") {
+    if (state.productGrid.arrowLeft) {
+      state.productGrid.arrowLeft = false;
+      state.productGrid.arrowRight = true;
+    } else {
+      state.productGrid.arrowLeft = true;
+      state.productGrid.arrowRight = false;
+    }
+    renderArrows("productGrid");
+  }
 }
 
 function renderArrows(containerType) {
+  const catGridArrowLeft = document.getElementById("catGridBtnLeft");
+  const catGridArrowRight = document.getElementById("catGridBtnRight");
+  const productGridArrowLeft = document.getElementById("productGridBtnLeft");
+  const productGridArrowRight = document.getElementById("productGridBtnRight");
 
-    const catGridArrowLeft = document.getElementById('catGridBtnLeft');
-    const catGridArrowRight = document.getElementById('catGridBtnRight');
-    const productGridArrowLeft = document.getElementById('productGridBtnLeft');
-    const productGridArrowRight = document.getElementById('productGridBtnRight');
-
-    if (containerType === 'catGrid') {
-        if (state.catGrid.arrowLeft) {
-
-            catGridArrowRight.classList.add('hidden');
-            catGridArrowLeft.classList.remove('hidden');
-
-        } else {
-            catGridArrowLeft.classList.add('hidden');
-            catGridArrowRight.classList.remove('hidden');
-        }
-    } else if (containerType === 'productGrid') {
-
-        if (state.productGrid.arrowLeft) {
-            productGridArrowRight.classList.add('hidden');
-            productGridArrowLeft.classList.remove('hidden');
-        } else {
-            productGridArrowLeft.classList.add('hidden');
-            productGridArrowRight.classList.remove('hidden');
-        }
+  if (containerType === "catGrid") {
+    if (state.catGrid.arrowLeft) {
+      catGridArrowRight.classList.add("hidden");
+      catGridArrowLeft.classList.remove("hidden");
+    } else {
+      catGridArrowLeft.classList.add("hidden");
+      catGridArrowRight.classList.remove("hidden");
     }
-
+  } else if (containerType === "productGrid") {
+    if (state.productGrid.arrowLeft) {
+      productGridArrowRight.classList.add("hidden");
+      productGridArrowLeft.classList.remove("hidden");
+    } else {
+      productGridArrowLeft.classList.add("hidden");
+      productGridArrowRight.classList.remove("hidden");
+    }
+  }
 }
 
 // ON RESIZE TRIGGER THESE EVENTS
 function onResizeEvents() {
-    // renderColContainer('productGrid', 'productCard', state.productCount, 3);
-    renderColContainer('catGrid', 'catCard', state.productCount, 5);
+  // renderColContainer('productGrid', 'productCard', state.productCount, 3);
+  renderColContainer("catGrid", "catCard", state.productCount, 5);
 }
 
 // INIT SMOOTH SCROLL
 function initSmoothScroll() {
-    let scroll = new SmoothScroll('a[href*="#"]', {
-        speed: 500
-    });
+  let scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 500,
+  });
 }
 
 // INIT FUNCTIONS ON CONTENT LOAD
 function init() {
-    // renderProductCards(products);
-    renderCatCards(categories);
-    // renderColContainer('productGrid', 'productCard', state.productCount, 3);
-    renderColContainer('catGrid', 'catCard', state.productCount, 5);
-    getSetCssVars()
-    window.addEventListener("resize", onResizeEvents);
-    initSmoothScroll();
-//     renderArrows('catGrid');
-    // renderArrows('productGrid');
+  // renderProductCards(products);
+  renderCatCards(categories);
+  // renderColContainer('productGrid', 'productCard', state.productCount, 3);
+  renderColContainer("catGrid", "catCard", state.productCount, 5);
+  getSetCssVars();
+  window.addEventListener("resize", onResizeEvents);
+  initSmoothScroll();
+  //     renderArrows('catGrid');
+  // renderArrows('productGrid');
 }
 
-if (document.readyState === 'complete') {
-    console.log('document loaded')
-    init();
+if (document.readyState === "complete") {
+  console.log("document loaded");
+  init();
 }
