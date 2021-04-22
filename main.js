@@ -237,13 +237,13 @@ function renderCatCard(catName, catLink, catImg) {
                     only screen and (min--moz-device-pixel-ratio: 1.5),
                     only screen and (min-device-pixel-ratio: 1.5),
                     only screen and (min-resolution: 144dpi),
-                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}.jpg?v=1&width=1600&height&type=webp">
+                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}.jpg&width=1600&height&type=webp">
                     <source media="only screen and (-webkit-min-device-pixel-ratio: 1.5),
                     only screen and (min--moz-device-pixel-ratio: 1.5),
                     only screen and (min-device-pixel-ratio: 1.5),
                     only screen and (min-resolution: 144dpi),
-                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}.jpg?v=1&width=820&height&type">
-                    <img src="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/mobile/${catImg}.jpg?v=1&width=410&height&type" alt="">
+                    only screen and (min-resolution: 1.5dppx)" srcset="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/desktop/${catImg}.jpg&width=820&height&type">
+                    <img src="https://webcdn.justbrands.nl/resize?url=https://www.justbrands.nl/media/catalog/product/upload/images_jbfo/monsterverkoop/cats/mobile/${catImg}.jpg&width=410&height&type" alt="">
                 </picture>  
             </div>
             <div class="catCard__bottom">
@@ -379,7 +379,8 @@ function initSmoothScroll() {
 }
 
 // INIT FUNCTIONS ON CONTENT LOAD
-function init() {
+function init(from) {
+  console.log(from);
   renderProductCards(products);
   renderCatCards(categories);
   renderColContainer("productGrid", "productCard", state.productCount, 3);
@@ -391,9 +392,10 @@ function init() {
   renderArrows("productGrid");
 }
 
-document.onreadystatechange = () => {
-  if (document.readyState === "complete") {
-    console.log("document loaded");
-    init();
-  }
-};
+window.addEventListener("DOMContentLoaded", () => {
+  console.log("document loaded");
+  init("domloaded");
+  const isProcessingElement = document.querySelector("#productGrid");
+  const observer = new MutationObserver(init("observer"));
+  observer.observe(isProcessingElement, { attributes: true });
+});
