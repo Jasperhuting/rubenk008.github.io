@@ -393,9 +393,16 @@ function init(from) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  console.log("document loaded");
   init("domloaded");
-  const isProcessingElement = document.querySelector("#productGrid");
-  const observer = new MutationObserver(init("observer"));
-  observer.observe(isProcessingElement, { attributes: true });
+  setTimeout(() => {
+    if (!document.querySelector("#productGrid").children.length) {
+      init("domloaded");
+    }
+  }, 1000);
 });
+
+setTimeout(() => {
+    if (!document.querySelector("#productGrid").children.length) {
+      init("domloaded");
+    }
+  }, 1000);
