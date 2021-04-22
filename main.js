@@ -387,11 +387,13 @@ function init() {
   getSetCssVars();
   window.addEventListener("resize", onResizeEvents);
   initSmoothScroll();
-  //     renderArrows('catGrid');
-  // renderArrows('productGrid');
+  renderArrows("catGrid");
+  renderArrows("productGrid");
 }
 
-if (document.readyState === "complete") {
-  console.log("document loaded");
-  init();
-}
+document.onreadystatechange = () => {
+  if (document.readyState === "complete") {
+    console.log("document loaded");
+    init();
+  }
+};
